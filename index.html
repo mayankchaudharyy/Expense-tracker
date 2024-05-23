@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9895945413856370"
+     crossorigin="anonymous"></script>
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <h1 class="top-head">Expense Calculator</h1>
+    <button class="del-btn">Delete All History</button>
+    <div class="head">
+        <div class="wallet">
+            <div>
+                <p class="grey">Your total balance <span class="debt"></span></p>
+            </div>
+            <h1><span class="wallet-balance">0</span> ₹</h1>
+        </div>
+        <div class="total-money">
+            <div class="income-money">
+                <div class="income-money-rg">
+                    <p class="green"><i class="fa-solid fa-arrow-up"></i></p>
+                </div>
+                <div class="rg-money">
+                    <div>
+                        <p class="grey">Total Incomes</p>
+                    </div>
+                    <h2><span class="total-green-money">0</span> ₹</h2>
+                </div>
+            </div>
+            <div class="expense-money">
+                <div class="income-money-rg">
+                    <p class="red"><i class="fa-solid fa-arrow-down"></i></p>
+                </div>
+                <div class="rg-money">
+                    <div>
+                        <p class="grey">Total Expenses</p>
+                    </div>
+                    <h2><span class="total-red-money">0</span> ₹</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chart" >
+        <canvas id="myChart" style="height:400px" ></canvas>
+    </div>
+    <form class="last-section">
+        <select name="money" id="type-of" required>
+            <option value="none" selected disabled>Select an Income Or Expense</option>
+            <option value="Income" >Income</option>
+            <option value="Expense">Expense</option>
+        </select>
+        <input type="text" maxlength="30"  class="reason" placeholder="Transaction Reason" required>
+        <div class="btns">
+            <input type="number" name="" id="real-money" placeholder="Enter Amount" required>
+            <button class="add-transaction" type="submit">Add Transaction</button>
+        </div>
+    </form>
+    <div class="history">
+        <h1>Last Transactions</h1>
+        <div id="history-id">
+            <div class="history-trans-neg history-trans hidden">
+                <div class="name-transaction">
+                    <p class="decide-symbol minus" ><i class="fa-solid fa-minus"></i></p>
+                    <h3 class="specific">Spotify</h3>
+                </div>
+                <div class="history-money">
+                    <div>
+                        <h3><span class="added-transaction">-0</span> ₹</h3>
+                    </div>
+                    <div>
+                        <p class="grey time">29.05.2022 | 9:35 am</p>
+                    </div>
+                </div>
+            </div>
+            <div class="history-trans-plus history-trans hidden">
+                <div class="name-transaction">
+                    <p class="decide-symbol plus" ><i class="fa-solid fa-plus"></i></p>
+                    <h3 class="specific">Spotify</h3>
+                </div>
+                <div class="history-money">
+                    <div>
+                        <h3><span class="added-transaction">0</span> ₹</h3>
+                    </div>
+                    <div>
+                        <p class="grey time">29.05.2022 | 9:35 am</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js"></script>
+</body>
+</html>
